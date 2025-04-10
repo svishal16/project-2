@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        SONAR_SERVER = 'SonarQube' // Must match Jenkins SonarQube config name
-        SONAR_PROJECT_KEY = 'com.example:java-webapp-cicd'
+        SONAR_SERVER = 'sonarserver' // Must match Jenkins SonarQube config name
+        SONAR_PROJECT_KEY = 'project-2'
         GITHUB_CREDENTIALS = 'github-token' // Jenkins credential ID
     }
 

@@ -37,4 +37,21 @@ pipeline {
             }
         }
     }
+
+    post {
+        success {
+            echo '🎉 Build succeeded!'
+            githubNotify context: 'CI/CD Pipeline', status: 'SUCCESS', description: 'Build passed', targetUrl: "${env.BUILD_URL}"
+        }
+
+        failure {
+            echo '❌ Build failed!'
+            githubNotify context: 'CI/CD Pipeline', status: 'FAILURE', description: 'Build failed', targetUrl: "${env.BUILD_URL}"
+        }
+
+        aborted {
+            echo '⚠️ Build aborted!'
+            githubNotify context: 'CI/CD Pipeline', status: 'ERROR', description: 'Build aborted', targetUrl: "${env.BUILD_URL}"
+        }
+    }
 }

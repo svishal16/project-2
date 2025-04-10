@@ -37,13 +37,13 @@ pipeline {
             }
         }
     }
-}
 
-post {
-    always {
-        script {
-            def status = currentBuild.currentResult
-            githubNotify context: 'ci/jenkins', status: status.toLowerCase()
+    post {
+        always {
+            script {
+                def status = currentBuild.currentResult
+                githubNotify context: 'ci/jenkins', status: status.toLowerCase()
+            }
         }
     }
 }

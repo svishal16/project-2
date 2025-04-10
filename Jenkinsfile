@@ -4,7 +4,7 @@ pipeline {
     environment {
         SONAR_SERVER = 'sonarserver' // Must match Jenkins SonarQube config name
         SONAR_PROJECT_KEY = 'project-2'
-        GITHUB_CREDENTIALS = 'github-token' // Jenkins credential ID
+        GITHUB_CREDENTIALS = 'githubtoken' // Jenkins credential ID
     }
 
     stages {
